@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         Button sockConn = (Button) findViewById(R.id.socketConn);
         sockConn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                Intent intent11 = new Intent(MainActivity.this, Main23Activity.class);
+                startActivity(intent11);
+
                 String addr = input01.getText().toString().trim();
 //
                 ConnectThread thread = new ConnectThread(addr);
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void run() {
-            String ip = "172.200.110.143";
+            String ip = "192.168.43.18";
             String port = "5000";
             try {
                 sock = new Socket(ip, Integer.parseInt(port));
